@@ -55,15 +55,18 @@
 
         <img id="img1" style="width:300px;height:300px;" />
 
-        {% if img_url %}
+        <p style="color: {{color}};"> {{massege}} </p>
+
+        {% if img %}
             <div id="result">
                 <h2>結果</h2>
                 <div>
                     アップロードされた画像<br>
-                    <p><img src="{{ img_url }}"></p>
+                    <img src={{img}} alt="今回の画像" title="今回の画像" style="width: 30%;">
                 </div>
+                <hr>
                 <div>
-                    一番予想
+                    <h4>一番予想</h4>
                     <p><img src="{{ pre1_img_url }}"></img><p>
                     <h3>{{ pre1_detail }}</h3>
                     確率
@@ -71,7 +74,7 @@
                 </div>
                 <hr>
                 <div>
-                    二番予想
+                    <h5>二番予想</h5>
                     <p><img src="{{ pre2_img_url }}"></img><p>
                     <h3>{{ pre2_detail }}</h3>
                     確率
@@ -79,7 +82,7 @@
                 </div>
                 <hr>
                 <div>
-                    三番予想
+                    <h5>三番予想</h5>
                     <p><img src="{{ pre3_img_url }}"></img><p>
                     <h3>{{ pre3_detail }}</h3>
                     確率
