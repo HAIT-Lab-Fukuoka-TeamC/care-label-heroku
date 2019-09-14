@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, redirect, request, jsonify, render_template, url_for, send_from_directory, session
+from flask import Flask, redirect, make_response, request, jsonify, render_template, url_for, send_from_directory, session
 from keras import models
 from PIL import Image
 from keras.models import load_model
@@ -22,8 +22,6 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 app = Flask(__name__)
 UPLOAD_FOLDER = './uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-SEEDS_FOLDER = './seeds'
-app.config['SEEDS_FOLDER'] = SEEDS_FOLDER
 app.config['SECRET_KEY'] = os.urandom(24)
 
 
@@ -196,10 +194,6 @@ def predict():
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
-
-@app.route('/seeds/<filename>')
-def seed_file(filename):
-    return send_from_directory(app.config['SEEDS_FOLDER'], filename)
 
 @app.errorhandler(404)
 def not_found(error):
