@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from flask import Flask, redirect, request, jsonify, render_template, url_for, send_from_directory, session
 from keras import models
 from PIL import Image
