@@ -57,10 +57,10 @@ def predict():
                 backend.clear_session() # 2回以上連続してpredictするために必要な処理
 
                 # モデルの読み込み
-                model = model_from_json(open('and.json', 'r').read())
+                model = model_from_json(open('and_1.json', 'r').read())
 
                 # 重みの読み込み
-                model.load_weights('and_weight.hdf5')
+                model.load_weights('and_1_weight.hdf5')
 
 
                 image_size = 50
