@@ -79,7 +79,7 @@ def predict():
                 other_pros = [prd[0][other_labels[0]], prd[0][other_labels[1]], prd[0][other_labels[2]]]
 
                 details = [
-                       '水温90℃を限度に、洗濯機で洗えます。',
+                       '水温95℃を限度に、洗濯機で洗えます。',
                        '水温50℃を限度に、洗濯機で洗えます。',
                        'ハンガー等を使って、つり干しします。',
                        '漂白できません。',
